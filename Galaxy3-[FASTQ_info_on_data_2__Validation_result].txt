@@ -1,0 +1,18 @@
+fastq_utils 0.25.1
+DEFAULT_HASHSIZE=39000001
+Scanning and indexing all reads from /data/dnb05/galaxy_db/files/7/9/b/dataset_79b7ab24-8ccb-436d-9d5f-b87ffe68f5d0.dat
+CASAVA=1.8
+Scanning complete.
+
+Reads processed: 6758
+Memory used in indexing: ~0 MB
+File /data/dnb05/galaxy_db/files/7/9/b/dataset_79b7ab24-8ccb-436d-9d5f-b87ffe68f5d0.dat processed
+Next file /data/dnb05/galaxy_db/files/7/9/b/dataset_79b7ab24-8ccb-436d-9d5f-b87ffe68f5d0.dat
+CASAVA=1.8
+------------------------------------
+Number of reads: 6758
+Quality encoding range: 35 73
+Quality encoding: 33
+Read length: 247 251 251
+OK
+
