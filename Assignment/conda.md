@@ -10,3 +10,7 @@ I used the `conda list` command to see the tools installed in my environment.
 
 ### Exporting the environment
 The command `conda env export > environment.yml` is used to export the current environment. when one types the `ls` command, the file environment.yml is seen. 
+
+### Creating an environment from the yml file
+Use the command `conda env create -f environment.yml` 
+
