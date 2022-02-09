@@ -9,3 +9,4 @@ I installed a tool called r-neuroblastoma using the command `conda install r-neu
 I used the `conda list` command to see the tools installed in my environment.
 
 ### Exporting the environment
+The command `conda env export > environment.yml` is used to export the current environment. when one types the `ls` command, the file environment.yml is seen. 
