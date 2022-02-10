@@ -4,4 +4,12 @@ Snakemake is like writing a shell script, but instead of putting a series of com
 
 A snakefile contains 8 lines. The syntax of python is similar to that of snakemake. Snakemake builds up workflows from rules. It is all based on filename persons and wild card placements.
 
-Snakemake runs the necessary jobs 
+Snakemake runs the necessary jobs. If the job has been run and no new data has been added then snakemake will tell you nothing to be done. 
+
+The main flags of snakemake include:
+* `-p` which prints shell commands before it runs them
+* `-n` only shows steps but does not run them. It is useful for testing workflows and you want to check that everything looks fine before you actually do any analysis.
+* `-F` used for force running all steps
+* `-j` runs multiple jobs in parallel
+
+
