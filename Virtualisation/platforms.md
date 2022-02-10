@@ -11,4 +11,11 @@ Some of the common virtualization softwares include:
 6. **Microsoft hyper V** has features like hardware virtualization, can run multiple virtuaal machines and it supports a cloud-based platform.
 7. Other platforms include **Citrix**, **Amazon**, **QEMU**, **RedHat**, **Boot Camp** among others.
 
-There are different types of virtualization 
+There are different types of virtualization. They include:
+* Cloud
+* Desktop
+* Server
+* Storage
+* Application
+
+The difference between virtualization and containerization is that 
