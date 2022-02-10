@@ -12,4 +12,6 @@ The main flags of snakemake include:
 * `-F` used for force running all steps
 * `-j` runs multiple jobs in parallel
 
+The order of rules in a snakefile is unimportant. What is important is the filename patterns that snakemake is using to discover rules to run. Keeping the names of your file neat and tidy in snakemake is super important because the names of the files are driving the the workflow that you are running.
+
 
