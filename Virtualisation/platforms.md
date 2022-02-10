@@ -19,3 +19,11 @@ There are different types of virtualization. They include:
 * Application
 
 The difference between virtualization and containerization is that virtualization enables you to run multiple operating systems on the hardware of a single physical server, while containerization enables you to deploy multiple applications using the same operating system on a single virtual machine or server. Also, containers are an excellent choice for tasks with a much shorter lifecycle while virtual machines have a longer lifecycle than containers, and are best used for longer periods of time.
+
+Some of the benefits of virtualization include:
+* Flexibility
+* Recovery as one can save the virtual machines as files
+* Better use of hardware resources
+* Can be used in researching OSs
+* Power saving
+* Reduced footprint as one can consolidate multiple pieces of hardware onto one small physical piece of hardware. 
