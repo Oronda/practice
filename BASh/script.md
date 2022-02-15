@@ -1,49 +1,93 @@
-# Bash Scripting exercises
-​
-_Below are few exercises to test your understanding of unix, working with files in  unix, file manipulations, git and markdown syntax. 
-Kindly attempt all the questions and put your commands/answers in a markdown document, for those questions that require you to write bash 
-scripts write the scripts. Clone your working repository from Github (create one if you don't have) then add the scripts and markdown document 
-containing the short answers, push the changes to the remote repo. Once done create an issue and assign it to me to check out your progress._
-​
-_**Have fun and enjoy!!**_
-​
 ### Question 1
 How many processes are currently running on your system? Use ps and wc, the first line of output of ps is not a process!
-​
+```bash
+$ ps | wc -l
+```
+Output is `3`
+
 ### Question 2
 Write a script that upon invocation shows the time and date, lists all logged-in users, and gives the system uptime. 
 The script then saves this information to a logfile.
-​
+```bash
+$ echo "$(date && who && uptime)" > logfile
+$ cat logfile
+```
+Output is 
+```
+Tue 15 Feb 2022 02:56:56 PM EAT
+icipe    :0           2022-02-15 08:42 (:0)
+ 14:56:56 up  6:17,  1 user,  load average: 0.19, 0.17, 0.12
+```
+
 ### Question 3
 Which command would you use in order to create an empty file in the current directory, let's say empty.txt?
-​
+```bash
+$ touch empty.txt
+```
+
 ### Question 4
 You are in /home/icipe/  suppose this directory is empty. How do you create in only one command the whole path /home/icipe/Work/mini-project/RNA-Seq/?
-​
+```bash
+$ mkdir -p /home/icipe/Work/mini-project/RNA-Seq/
+```
+
 ### Question 5
 Suppose your current working directory contains a file named seqs.txt. How do you rename this file into sequences.fasta? 
 Does this have any effect on the content of the file, and if yes, what does it do?
-​
+```bash
+$ mv seqs.txt sequences.fasta
+```
 ### Question 6
 How can you create in a single command a file containing the contents "Hello, world!" and named universal_greeting.txt?
-​
+```bash
+$ echo "Hello world!" > universal_greeting.txt
+```
+
 ### Question 7
 What about creating the same file but with filename "universal greeting.txt" (the filename contains a space)?
-​
+```bash
+$ echo "Hello world!" > "universal greeting.txt"
+```
+It will still print `Hello world!`
+
 ### Question 8
 How can you use the commandline (on whichever machine you are now, that is connected to the internet) to download directly the 
 file you can see on https://github.com/Fnyasimi/my-first-repo/blob/main/directory1/test.fa ? Be careful, you need to get the raw text file itself, 
 not the full HTML page presenting it.
-​
+ ```bash
+ $ wget https://raw.githubusercontent.com/Fnyasimi/my-first-repo/main/directory1/test.fa
+ $ less test.fa
+ $ q
+ ```
+ 
 ### Question 9
-How can you count the number of lines in this text file (test.fa)? How do you count the number of sequences?
-​
+How can you count the number of lines in this text file (test.fa)?
+```bash
+$ wc -l test.fa
+```
+The output is `10281 test.fa`
+
+How do you count the number of sequences?
+```bash
+$ cat test.fa | grep -c ">"
+```
+or
+```bash
+$ grep -c ">" test.fa
+```
+The output is `100`
+
+
 ### Question 10
 Extract only the identifier lines from this file, and write them into a file called "identifiers.txt".
-​
+```bash
+$ grep -E ">" test.fa > identifiers.txt
+$ cat identifiers.txt
+```
+
 ### Question 11
 How can you process the file you got from question 8 to replace all its uppercase "A" letters into lowercase "a" letters, leaving the rest untouched?
-​
+
 ### Question 12
 In one command, ask for the display of all identifier lines from the same file test.fa without wrapping the lines, i.e. by having all lines displayed 
 on your screen effectively start with the character '>'.
