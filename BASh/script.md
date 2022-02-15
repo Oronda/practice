@@ -87,31 +87,81 @@ $ cat identifiers.txt
 
 ### Question 11
 How can you process the file you got from question 8 to replace all its uppercase "A" letters into lowercase "a" letters, leaving the rest untouched?
+```bash
+$ sed -i 's/A/a/g' test.fa
+$ cat test.fa
+```
 
 ### Question 12
 In one command, ask for the display of all identifier lines from the same file test.fa without wrapping the lines, i.e. by having all lines displayed 
 on your screen effectively start with the character '>'.
-​
+```bash
+$ grep ">" test.fa
+```
+
 ### Question 13
 Can you write a very short script (possibly one single commandline) to extract from the same file the species names?
-​
+```bash
+$ grep ">" test.fa | sed "s/PREDICTED: //g" | cut -f 2-3 -d " "
+```
+
 ### Question 14
 Once this is done, how do you count the species names with their order of multiplicity 
 (i.e. how many sequences belong to Mus musculus, how many to Homo sapiens, etc)?
-​
+```bash
+$ grep ">" test.fa | sed "s/PREDICTED: //g" | cut -f 2-3 -d " " | sort | uniq -c
+```
+The output is
+```bash
+      2 Aotus nancymaae
+      1 Castor canadensis
+      1 Cebus capucinus
+      1 Ceratotherium simum
+      6 Cercocebus atys
+      5 Chinchilla lanigera
+      2 Chlorocebus sabaeus
+      1 Colobus angolensis
+      2 Cricetulus griseus
+...
+```
+
 ### Question 15
 Write a loop in Bash producing all the integers from 1 to 30, one per line?
-​
+```
+$ for number in {1..30}
+do
+echo $number
+done
+```
+or
+```
+$ for number in $(seq 30) ; do  echo $number ; done
+```
+
 ### Question 16
 Create at once 20 files called "trial1" to "trial20" and *then* rename them all by appending the suffix ".data". 
 Of course, don't issue 20 commands, but just one.
-​
+```bash
+$ for x in{1..20}
+do
+touch trial$x
+mv trial$x trail$x.data
+done
+$ ls
+```
+
 ### Question 17
-Try this with the command "expr 1 / 0", whose purpose is to calculate the integer result of 1 divided by 0. What happens? Why?
-​
+Try this with the command "expr 1 / 0", whose purpose is to calculate the integer result of 1 divided by 0. What happens?
+An error `expr: division by zero` occurs
+Why?
+The comptuter does not recognize infinity.
+
 ### Question 18
 How can you separately redirect the standard output and the standard error streams into two separate files?
-​
+```bash
+$ command > stdout.txt 2> stderr.txt
+```
+
 ### Question 19
 Write a Bash script asking "What's your name?", then waiting for you (the user) to enter you name and press Enter, 
 following what the program displays some text according to the following pattern:
@@ -127,3 +177,6 @@ Of course there will be at least an if or a case construct in your script.
 ​
 ### Question 20
 Suppose your current working directory is /home/icipe/Linux/Exercises/. What is the command that will enable to move to /home/icipe/Fun_stuff/?
+```bash
+$ cd ../../Fun_stuff/
+```
