@@ -167,14 +167,41 @@ Write a Bash script asking "What's your name?", then waiting for you (the user) 
 following what the program displays some text according to the following pattern:
 "Good morning/day/evening, your_name!
 It's now current_time on this lovely day of current_day." and it exits.
-​
+
 For instance, the message written by your program would be:
 ```
 Good day Emmanuel! It's not 12:57EAT on this lovely day of July 20. 1:00
 or 'Good morning" in the morning hours, or "Good evening" in the evening hours, depending on the current time.
 Of course there will be at least an if or a case construct in your script.
+
 ```
-​
+```
+#!/bin/bash 
+echo -n "What's your name? "
+read name 
+current_hour=`date +%H` 
+current_time=`date "+%H:%M%Z"` 
+current_day=`date "+%B %d"` 
+
+if [[ $current_hour -lt 12 ]]
+then 
+    period="morning"
+elif [[ $current_hour -lt 18 ]]
+then 
+    period="day"
+else 
+    period="evening"
+fi 
+
+echo "Good $period $name! It is now $current_time on this lovely day of $current_day."
+```
+
+The output is 
+```
+What's your name? Oronda
+Good day Oronda! It is now 16:52EAT on this lovely day of February 16.
+```
+
 ### Question 20
 Suppose your current working directory is /home/icipe/Linux/Exercises/. What is the command that will enable to move to /home/icipe/Fun_stuff/?
 ```bash
