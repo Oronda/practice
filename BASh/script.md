@@ -175,7 +175,7 @@ or 'Good morning" in the morning hours, or "Good evening" in the evening hours, 
 Of course there will be at least an if or a case construct in your script.
 
 ```
-```
+```bash
 #!/bin/bash 
 echo -n "What's your name? "
 read name 
@@ -197,7 +197,7 @@ echo "Good $period $name! It is now $current_time on this lovely day of $current
 ```
 
 The output is 
-```
+```bash
 What's your name? Oronda
 Good day Oronda! It is now 16:52EAT on this lovely day of February 16.
 ```
