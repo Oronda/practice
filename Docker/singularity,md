@@ -47,4 +47,3 @@ $ docker run -it <username>/<image_name>:latest
 ```
 5. Saving the image
 One can use the `docker save` command to save the image you have pulled
-```
