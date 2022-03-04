@@ -1,1 +1,9 @@
+## Docker images and container
+An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.
+
+A container is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with the state, or a user process).
+
+A Docker image can be compared to a git repository. Just like a git repository, it can be hosted on GitHub, Bitbucket, GitLab, or even a private git repo hosting service, but we could host our Docker image on Docker repository hosting service like Docker Hub.
+
+Docker Hub is a service provided by Docker for hosting, finding, and sharing Docker Repositories. A docker repository can be public or private. Docker HUb is an exaample of a prublic repository. A third-party repository hosting services also exists. The Docker Hub and other third party repository hosting services are called registries. A registry has many repositories, while a repository has many different versions of the same image.
 
