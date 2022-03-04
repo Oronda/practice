@@ -22,28 +22,39 @@ docker pull <image_name>:<tag_name>
 
 ### Uploading an image to Docker Hub
 1.Sign up for docker hub
+
 2.Sign in to Docker Hub and click on ‘Create Repository’ on the Docker Hub welcome page
+
 3.Fill in the repository name. Also, describe your repo like "My First Repository". Finally, click on the create button
 
 ### uploading an image to Docker Hub
 1. Log into the Docker public registry from your local machine terminal using Docker CLI
+
 ```
 docker login
 ```
+
 2. Tag the image
 The image can be official or unofficial. If it is an unofficial image, it should be named as follows ` <username>/<image_name>:<tag_name>`. The command used is;
+
 ```
 docker tag <image_name>:latest <username>/<image_name>:latest
 ```
+
 3. Publish the image
 Use the `docker push` command to upload yor tagged image into the repository
+
 ```
 docker push <username>/<image_name>:latest
+```
+
 4. Test out your image
 One can test the image you uploaded by running;
+
 ```
 docker pull <username>/<image_name>:latest
 $ docker run -it <username>/<image_name>:latest
 ```
+
 5. Saving the image
 One can use the `docker save` command to save the image you have pulled
