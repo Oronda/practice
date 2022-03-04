@@ -27,7 +27,7 @@ docker pull <image_name>:<tag_name>
 
 3.Fill in the repository name. Also, describe your repo like "My First Repository". Finally, click on the create button
 
-### uploading an image to Docker Hub
+### Uploading an image to Docker Hub
 1. Log into the Docker public registry from your local machine terminal using Docker CLI
 
 ```
